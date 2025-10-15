@@ -3,6 +3,7 @@ import React from 'react'
 import Categories from './Categories';
 import ProductCart from './ProductCard';
 import ProductCard from './ProductCard';
+import Link from 'next/link';
 
 const products: ProductsType = [
     {
@@ -98,7 +99,7 @@ const products: ProductsType = [
         "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
       price: 69.9,
       sizes: ["40", "42", "43"],
-      colors: ["gray", "pink"],
+      
       images: { gray: "/products/7g.png", pink: "/products/7p.png" },
     },
     {
@@ -109,15 +110,13 @@ const products: ProductsType = [
       description:
         "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
       price: 59.9,
-      sizes: ["s", "m", "l"],
-      colors: ["blue", "green"],
       images: { blue: "/products/8b.png", green: "/products/8gr.png" },
     },
   ];
 
 
 
-const ProductList = () => {
+const ProductList = ({category}:{category:string}) => {
   return (
     <div className='w-full '>
         <Categories/>
@@ -126,6 +125,10 @@ const ProductList = () => {
                 <ProductCard key={product.id} product={product}/>
             ))}
         </div>
+        <Link href={category ? `/products/?category=${category}` : "/products"}
+        className='flex justify-end m-4 underline text-sm text-gray-500'>
+        View all products
+        </Link>
     </div>
   )
 }

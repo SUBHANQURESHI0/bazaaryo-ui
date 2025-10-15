@@ -59,9 +59,14 @@ import {
 const Categories = () => {
     const searchParams = useSearchParams()
     const router = useRouter()
+    const pathName = usePathname()
+
     const selectedCategory = searchParams.get("category")
+
     const handleChange = (value:string|null)=>{
-        router.push(`/?category=${value}`, {scroll:false})
+      const params = new URLSearchParams(searchParams)
+      params.set("category",value || "all")
+        router.push(`${pathName}?${params.toString()}`, {scroll:false})
     }
   return (
     <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 
