@@ -1,6 +1,12 @@
+import HeroSection from "@/components/HeroSection"
+import ProductList from "@/components/ProductList"
+
 const Homepage = () => {
   return (
-    <div className=''>Homepage</div>
+    <div className=''>
+      <HeroSection/>
+      <ProductList/>
+    </div>
   )
 }
 
