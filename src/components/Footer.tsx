@@ -18,7 +18,7 @@ export default function Footer() {
         // --- KEY CHANGES HERE ---
         // 1. Swapped bg-neutral-900 for bg-slate-900 for consistency.
         // 2. Kept the orange top border as a great brand accent.
-        <footer className="bg-slate-900 text-slate-300 border-t-4 border-orange-500">
+        <footer className="bg-slate-900 text-slate-300 border-t-4 border-orange-500 mt-20">
             <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                 
                 {/* Logo & About */}
